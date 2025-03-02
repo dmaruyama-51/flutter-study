@@ -27,17 +27,45 @@ class JankenPage extends StatefulWidget {
 }
 
 class _JankenPageState extends State<JankenPage> {
+  String myHand = '✊️';
+
+  void selectHand(String selectedHand) {
+    myHand = selectedHand;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('ジャンケン')),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(onPressed: () {}, child: Text('✊️')),
-            ElevatedButton(onPressed: () {}, child: Text('✌️')),
-            ElevatedButton(onPressed: () {}, child: Text('✋️')),
+            Text(myHand, style: TextStyle(fontSize: 32)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    selectHand('✊️');
+                  },
+                  child: Text('✊️'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    selectHand('✌️');
+                  },
+                  child: Text('✌️'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    selectHand('✋️');
+                  },
+                  child: Text('✋️'),
+                ),
+              ],
+            ),
           ],
         ),
       ),
