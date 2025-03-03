@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/flutter,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=flutter,macos
+# Created by https://www.toptal.com/developers/gitignore/api/macos,flutter
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,flutter
 
 ### Flutter ###
 # Flutter/Dart/Pub related
@@ -98,4 +98,4 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-# End of https://www.toptal.com/developers/gitignore/api/flutter,macos
+# End of https://www.toptal.com/developers/gitignore/api/macos,flutter
