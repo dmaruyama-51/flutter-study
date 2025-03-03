@@ -30,6 +30,7 @@ class JankenPage extends StatefulWidget {
 class _JankenPageState extends State<JankenPage> {
   String myHand = '✊️';
   String computerHand = '✊️';
+  String result = '引き分け';
   String randomNumberToHand(int randomNumber) {
     switch (randomNumber) {
       case 0:
@@ -43,15 +44,28 @@ class _JankenPageState extends State<JankenPage> {
     }
   }
 
-  void selectHand(String selectedHand) {
-    myHand = selectedHand;
-    generateComputerHand();
-    setState(() {});
-  }
-
   void generateComputerHand() {
     final randomNumber = Random().nextInt(3);
     computerHand = randomNumberToHand(randomNumber);
+  }
+
+  void judge() {
+    if (myHand == computerHand) {
+      result = '引き分け';
+    } else if ((myHand == '✊️' && computerHand == '✌️') ||
+        (myHand == '✌️' && computerHand == '✋️') ||
+        (myHand == '✋️' && computerHand == '✊️')) {
+      result = '勝ち';
+    } else {
+      result = '負け';
+    }
+  }
+
+  void selectHand(String selectedHand) {
+    myHand = selectedHand;
+    generateComputerHand();
+    judge();
+    setState(() {});
   }
 
   @override
@@ -62,6 +76,7 @@ class _JankenPageState extends State<JankenPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(result, style: TextStyle(fontSize: 32)),
             Text(computerHand, style: TextStyle(fontSize: 32)),
             Text(myHand, style: TextStyle(fontSize: 32)),
             Row(
