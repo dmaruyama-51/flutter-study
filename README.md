@@ -4,5 +4,6 @@ Flutter のお勉強記録
 
 | dir | description |
 | --- | ----------- |
+| chatgpt_api | chatgptのAPIを叩くアプリ |
 | instagram_ui_clone | インスタのUI模倣アプリ |
 | janken | じゃんけんアプリ |
