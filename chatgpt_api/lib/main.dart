@@ -62,13 +62,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 return Text(text, style: TextStyle(fontSize: 16));
               },
             ),
-            TextField(
-              decoration: InputDecoration(hintText: '問い合わせテキストを入力してください'),
-              onChanged: (text) {
-                setState(() {
-                  searchText = text;
-                });
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: TextField(
+                decoration: InputDecoration(hintText: '問い合わせテキストを入力してください'),
+                onChanged: (text) {
+                  setState(() {
+                    searchText = text;
+                  });
+                },
+              ),
             ),
             ElevatedButton(
               child: const Text('問い合わせ'),
